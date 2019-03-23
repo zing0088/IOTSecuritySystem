@@ -55,6 +55,7 @@ public class ConnectDatabase_UserValidation_AsyncTask extends AsyncTask<String ,
 
                 InputStream inputStream = httpURLConnection.getInputStream();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
+
                 String line = "";
                 while ((line = bufferedReader.readLine()) != null) {
                     result += line;

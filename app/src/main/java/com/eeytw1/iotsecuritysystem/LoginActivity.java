@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                         .setMessage(result);
                 alertDialog.create().show();
 
-                if (result.matches("login successful")) {
+                if (result.equals("login successful")) {
                     alertDialog.setMessage("login was OK");
                     alertDialog.show();
 
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     //context.startActivity(new Intent(context, MotionDetectorActivity.class));
                 } else {
-                    Toast toast = Toast.makeText(context, "Email or password is wrong", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(context, "Email or Password is wrong", Toast.LENGTH_SHORT);
                     toast.show();
                 }
             }
