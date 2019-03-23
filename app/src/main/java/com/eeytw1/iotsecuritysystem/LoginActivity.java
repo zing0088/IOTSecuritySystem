@@ -7,6 +7,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -61,6 +62,9 @@ public class LoginActivity extends AppCompatActivity {
                         .setMessage(result);
                 alertDialog.create().show();
 
+                Log.i("debug","-"+result+"-");
+                Log.i("debug", String.valueOf(result.equalsIgnoreCase("login successful")));
+
                 if (result.equals("login successful")) {
                     alertDialog.setMessage("login was OK");
                     alertDialog.show();
@@ -70,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     //context.startActivity(new Intent(context, MotionDetectorActivity.class));
                 } else {
+                    Log.i("debug","else-"+result+"-");
                     Toast toast = Toast.makeText(context, "Email or Password is wrong", Toast.LENGTH_SHORT);
                     toast.show();
                 }

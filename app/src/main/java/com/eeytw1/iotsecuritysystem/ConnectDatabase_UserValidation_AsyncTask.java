@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -74,6 +75,9 @@ public class ConnectDatabase_UserValidation_AsyncTask extends AsyncTask<String ,
 
     @Override
     protected void onPostExecute(String result) {
+
+        Log.i("debug","postexecute-"+result+"-");
+
         connectDatabase_userValidation_callback.LoginResult(result);
     }
 
