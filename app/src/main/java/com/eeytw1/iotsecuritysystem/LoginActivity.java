@@ -62,20 +62,16 @@ public class LoginActivity extends AppCompatActivity {
                         .setMessage(result);
                 alertDialog.create().show();
 
-                Log.i("debug","-"+result+"-");
-                Log.i("debug", String.valueOf(result.equalsIgnoreCase("login successful")));
+                String[] splitResult = result.split(" ");
 
-                if (result.equals("login successful")) {
-                    alertDialog.setMessage("login was OK");
-                    alertDialog.show();
-
-                    Intent i = new Intent(context, MainMenuActivity.class);
-                    context.startActivity(i);
-
+                if (splitResult[1].trim().equals("successful")) {
+                    Intent intent = new Intent(context, MainMenuActivity.class);
+                    context.startActivity(intent);
+                    finish(); //to prevent users going back to login screen when pressing back button
                     //context.startActivity(new Intent(context, MotionDetectorActivity.class));
                 } else {
                     Log.i("debug","else-"+result+"-");
-                    Toast toast = Toast.makeText(context, "Email or Password is wrong", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(context, "Username or Password is wrong", Toast.LENGTH_SHORT);
                     toast.show();
                 }
             }

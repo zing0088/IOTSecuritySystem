@@ -29,7 +29,6 @@ public class ConnectDatabase_UserValidation_AsyncTask extends AsyncTask<String ,
 
     @Override
     protected String doInBackground(String... params) {
-
         String result = "";
         String type = params[0];
         String login_url = "http://10.0.2.2:80/login.php";
@@ -75,9 +74,6 @@ public class ConnectDatabase_UserValidation_AsyncTask extends AsyncTask<String ,
 
     @Override
     protected void onPostExecute(String result) {
-
-        Log.i("debug","postexecute-"+result+"-");
-
         connectDatabase_userValidation_callback.LoginResult(result);
     }
 
